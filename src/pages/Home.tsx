@@ -133,14 +133,11 @@ const leadership = [
 ];
 
 const clientMarks = [
-  ["Divo", "https://uxdstudio.com/files/divo.png"], ["Pando", "https://uxdstudio.com/files/pando.png"], ["News18", "https://uxdstudio.com/files/news18.png"],
-  ["Elekta", "https://uxdstudio.com/files/elekta.png"], ["JewelOne", "https://uxdstudio.com/files/jewelOne.png"], ["Tanvi", "https://uxdstudio.com/files/tanvi.png"],
-  ["Emerald", "https://uxdstudio.com/files/emerald.png"], ["Chennai Properties", "https://uxdstudio.com/files/chennaiProperties.png"], ["La Orchid", "https://uxdstudio.com/files/laOrchid.png"],
-  ["UtilityX", "https://uxdstudio.com/files/utiltyx.png"], ["SPS", "https://uxdstudio.com/files/sps.png"], ["Ocean Spice", "https://uxdstudio.com/files/oceanSpice.png"],
-  ["Docs Valley", "https://uxdstudio.com/files/docsValley.png"], ["Welbeck", "https://uxdstudio.com/files/welbeck.jpg"], ["YUG", "https://uxdstudio.com/files/yug.png"],
-  ["VFF", "https://uxdstudio.com/files/vff.png"], ["Excel", "https://uxdstudio.com/files/excel-logo-png-test.png"], ["MocDoc", "https://uxdstudio.com/files/client-mocdoc-logo-new.png"],
-  ["Invention Steel", "https://uxdstudio.com/files/client-invention-steel.png"], ["Marutham Organic Farms", "https://uxdstudio.com/files/Marutham%20Organic%20Farms.png"], ["Connector", "https://uxdstudio.com/files/client-connector-logo-new.png"],
-  ["Sterling", "https://uxdstudio.com/files/client-sterling.png"], ["Belle Fashion", "https://uxdstudio.com/files/client-logo-bellefashion.jpg"]
+  ["Divo", "https://uxdstudio.com/files/divo.png"], ["News18", "https://uxdstudio.com/files/news18.png"], ["JewelOne", "https://uxdstudio.com/files/jewelOne.png"],
+  ["La Orchid", "https://uxdstudio.com/files/laOrchid.png"], ["Chennai Properties", "https://uxdstudio.com/files/chennaiProperties.png"], ["Elekta", "https://uxdstudio.com/files/elekta.png"],
+  ["Pando", "https://uxdstudio.com/files/pando.png"], ["MocDoc", "https://uxdstudio.com/files/client-mocdoc-logo-new.png"], ["SPS", "https://uxdstudio.com/files/sps.png"],
+  ["Emerald", "https://uxdstudio.com/files/emerald.png"], ["Welbeck", "https://uxdstudio.com/files/welbeck.jpg"], ["Connector", "https://uxdstudio.com/files/client-connector-logo-new.png"],
+  ["Sterling", "https://uxdstudio.com/files/client-sterling.png"], ["VFF", "https://uxdstudio.com/files/vff.png"], ["Belle Fashion", "https://uxdstudio.com/files/client-logo-bellefashion.jpg"]
 ];
 
 function scrollToId(id: string) {
@@ -272,7 +269,7 @@ export default function Home() {
 
       <section className="marquee"><div>DESIGN · TECHNOLOGY · GROWTH · <span>DESIGN · TECHNOLOGY · GROWTH ·</span> DESIGN · TECHNOLOGY · GROWTH ·</div></section>
 
-      <section className="clients-section section-pad"><div className="clients-head"><span className="section-kicker">TRUSTED BY TEAMS WITH AMBITION</span><h2>Good company.</h2><p>Partners across industries, connected by a desire to build better.</p></div><div className="client-grid">{clientMarks.map(([name, logo], index) => <div className={`client-mark partner-${index % 5}`} key={name}><img src={logo} alt={name} /><span>{name}</span></div>)}</div></section>
+      <section className="clients-section section-pad"><div className="clients-head"><span className="section-kicker">TRUSTED BY TEAMS WITH AMBITION</span><h2>Trusted across <span>industries.</span></h2><p>Selected partners in commerce, technology, hospitality, real estate, media, and growth.</p></div><div className="client-grid">{clientMarks.map(([name, logo], index) => <div className={`client-mark partner-${index % 5}`} key={name}><img src={logo} alt={name} /><span>{name}</span></div>)}</div></section>
 
       <section className="leadership-section section-pad" id="leadership"><div className="section-heading split-heading"><div><span className="section-kicker">THE PEOPLE BEHIND THE WORK</span><h2>Small team.<br /><span>Serious energy.</span></h2></div><p>Passionate technologists, designers and strategists committed to making digital transformation feel human.</p></div><div className="leadership-grid">{leadership.map(([name, role, image], index) => <article className="leader-card" key={name}><div className="leader-image"><img src={image} alt={name} /><span>0{index + 1}</span></div><h3>{name}</h3><p>{role}</p></article>)}</div></section>
 
