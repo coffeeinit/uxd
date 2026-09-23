@@ -1,0 +1,53 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://uxdstudio.com/#organization",
+      "name": "UXD Studio",
+      "url": "https://uxdstudio.com/",
+      "email": "info@uxdstudio.com",
+      "telephone": "+971505565035",
+      "areaServed": ["United Arab Emirates", "India"],
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://uxdstudio.com/#website",
+      "url": "https://uxdstudio.com/",
+      "name": "UXD Studio",
+      "publisher": { "@id": "https://uxdstudio.com/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://uxdstudio.com/#uae-office",
+      "name": "UXD Studio UAE",
+      "url": "https://uxdstudio.com/",
+      "parentOrganization": { "@id": "https://uxdstudio.com/#organization" },
+      "email": "info@uxdstudio.com",
+      "telephone": "+971505565035",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ajman",
+        "addressCountry": "AE",
+        "streetAddress": "Ajman Free Zone C1 Building, Office C1 - 1F - SF3660"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://uxdstudio.com/#india-office",
+      "name": "UXD Studio India",
+      "url": "https://uxdstudio.com/",
+      "parentOrganization": { "@id": "https://uxdstudio.com/#organization" },
+      "telephone": "+919500057849",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressCountry": "IN",
+        "streetAddress": "No 6, Sai Nagar, Okkiyam Thoraipakkam"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,4 @@
+Contact: mailto:info@uxdstudio.com
+Preferred-Languages: en
+Canonical: https://uxdstudio.com/.well-known/security.txt
+

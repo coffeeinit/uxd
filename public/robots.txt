@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /start-a-project
+
+Sitemap: https://uxdstudio.com/sitemap.xml
+
