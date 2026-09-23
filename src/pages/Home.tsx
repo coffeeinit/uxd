@@ -111,6 +111,20 @@ const stackCapabilities = [
   { number: "05", context: "WHEN THE EXPERIENCE HAS TO CARRY THE IDEA", title: "Product + brand", body: "A sharper identity and a clearer interface, working together so people understand the value before they have to think about it.", outcome: "MEMORABLE EXPERIENCES", icon: PenTool, tint: "lime" },
 ];
 
+const systems = [
+  { name: "Odoo / ERPNext", role: "OPERATIONS · ERP", body: "A connected operating layer for finance, inventory, people and projects.", image: "/tech-odoo.webp", tint: "#b7a4ff" },
+  { name: "AI + automation", role: "INTELLIGENCE · WORKFLOW", body: "Useful intelligence embedded in the moments where teams make decisions.", image: "/tech-ai.webp", tint: "#d8ff5e" },
+  { name: "Commerce ecosystems", role: "COMMERCE · INTEGRATIONS", body: "Digital storefronts and integrations that turn a catalogue into momentum.", image: "/tech-everywhere.webp", tint: "#fff5df" },
+];
+
+const enterpriseSolutions = [
+  { name: "AI", body: "Decision support, copilots and automation that keep people in control.", image: "/card-ai.svg", wide: true },
+  { name: "ERP", body: "One source of truth for the operations that move your business.", image: "/card-erp.svg" },
+  { name: "CRM", body: "Customer workflows that make every relationship easier to grow.", image: "/card-crm.svg" },
+  { name: "Multi-vendor marketplace", body: "Flexible platforms for complex supply and seller networks.", image: "/card-marketplace.svg", wide: true },
+  { name: "Ecommerce", body: "Commerce experiences designed to convert and keep customers moving.", image: "/card-ecommerce.svg" },
+];
+
 const leadership = [
   ["Mathiyazhagan Palanivel", "Founder & CEO", "https://uxdstudio.com/files/Mathiyazhagan.png"],
   ["Ilavarsan", "Co-Founder", "https://uxdstudio.com/files/Ilavarasan.png"],
@@ -138,6 +152,7 @@ function scrollToId(id: string) {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState<string | null>(null);
   const [activeService, setActiveService] = useState(0);
   const [activeCapability, setActiveCapability] = useState(0);
   const [projectRailProgress, setProjectRailProgress] = useState(0);
@@ -190,28 +205,29 @@ export default function Home() {
       <header className="navbar">
         <a href="#top" className="brand" aria-label="UXD Studio home"><span className="brand-symbol">∞</span><span className="brand-word">uxd<span>studio</span></span></a>
         <nav className={menuOpen ? "nav-links open" : "nav-links"}>
-          <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
+          <div className={`nav-item ${activeNav === "services" ? "open" : ""}`}><button className="nav-trigger" onClick={() => setActiveNav(activeNav === "services" ? null : "services")}>Services <ChevronDown size={14} /></button>{activeNav === "services" && <div className="mega-menu"><div className="mega-sidebar"><span className="mega-label">CAPABILITIES</span>{services.slice(0, 5).map((service) => { const ServiceIcon = service.icon; return <a href="#services" key={service.number} onClick={() => { setActiveNav(null); setMenuOpen(false); }}><ServiceIcon size={17} />{service.title.replace("\n", " ")}</a>; })}</div><div className="mega-links"><span className="mega-label">HOW WE HELP</span><div className="mega-links-grid"><a href="#services">Digital product engineering</a><a href="#services">ERPNext business systems</a><a href="#services">AI + automation</a><a href="#services">Experience & growth</a><a href="#contact">Talk to the team</a></div><a className="mega-explore" href="#services">Explore capabilities <ArrowUpRight size={15} /></a></div><div className="mega-panel"><span>BUILT FOR MOMENTUM</span><strong>Strategy, design and technology in one accountable team.</strong><a href="#contact">Start a conversation →</a></div></div>}</div>
           <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
+          <div className={`nav-item ${activeNav === "technologies" ? "open" : ""}`}><button className="nav-trigger" onClick={() => setActiveNav(activeNav === "technologies" ? null : "technologies")}>Technologies <ChevronDown size={14} /></button>{activeNav === "technologies" && <div className="mega-menu"><div className="mega-sidebar"><span className="mega-label">PLATFORMS</span>{["Odoo", "Shopify", "AI", "CRM", "Commerce"].map((item) => <a href="#systems" key={item} onClick={() => { setActiveNav(null); setMenuOpen(false); }}><span className="mega-glyph">✦</span>{item}</a>)}</div><div className="mega-links"><span className="mega-label">CONNECTED SYSTEMS</span><div className="mega-links-grid"><a href="#systems">ERP & business systems</a><a href="#systems">AI + automation</a><a href="#systems">Commerce ecosystems</a><a href="#enterprise">Enterprise technology</a><a href="#enterprise">Integrations & APIs</a></div><a className="mega-explore" href="#systems">See our stack <ArrowUpRight size={15} /></a></div><div className="mega-panel mega-panel-dark"><span>READY FOR WHAT’S NEXT</span><strong>Modern systems that work the way your business works.</strong><a href="#contact">Explore the stack →</a></div></div>}</div>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           <a href="#leadership" onClick={() => setMenuOpen(false)}>Leadership</a>
           <Link href="/case-studies" onClick={() => setMenuOpen(false)}>Case Studies</Link>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           <Link className="nav-cta" href="/start-a-project">Start a project <ArrowUpRight size={16} /></Link>
         </nav>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
+        <button className="menu-toggle" onClick={() => { setMenuOpen(!menuOpen); setActiveNav(null); }} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
       <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-copy">
+        <div className="hero-copy hero-copy-centered">
           <p className="eyebrow"><span className="eyebrow-dot" /> DIGITAL TRANSFORMATION PARTNER</p>
-          <h1 id="hero-title">Build what’s<br /><em>next.</em></h1>
+          <h1 id="hero-title">Build what’s <em>next.</em></h1>
           <p className="hero-intro">We design and develop future-ready digital products, intelligent business systems and experiences that make complex things feel simple.</p>
           <div className="hero-actions">
             <button className="button button-dark" onClick={() => scrollToId("contact")}>Let’s talk <MoveRight size={18} /></button>
             <button className="text-button" onClick={() => scrollToId("work")}><span className="play-icon"><Play size={12} fill="currentColor" /></span> See our work</button>
           </div>
         </div>
-        <div className="hero-art" aria-label="Abstract UXD Studio infinity mark">
+        <div className="hero-art hero-art-centered" aria-label="Abstract UXD Studio infinity mark">
           <div className="hero-grid" />
           <div className="orb orb-one" /><div className="orb orb-two" />
           <div className="infinity-mark"><span /><span /></div>
@@ -219,7 +235,7 @@ export default function Home() {
           <div className="art-label label-bottom">UXD / 2026</div>
           <div className="hero-sticker">THINK<br />DIFFERENT<span>↗</span></div>
         </div>
-        <div className="hero-foot"><span>SCROLL TO EXPLORE</span><ChevronDown size={18} /><span>01 / 06</span></div>
+        <div className="hero-chip hero-chip-left"><span className="hero-chip-dot" /> Odoo / ERPNext</div><div className="hero-chip hero-chip-right"><span className="hero-chip-dot hero-chip-dot-lime" /> AI + automation</div><div className="hero-foot"><span>SCROLL TO EXPLORE</span><ChevronDown size={18} /><span>01 / 06</span></div>
       </section>
 
       <section className="proof-bar" id="about" aria-labelledby="about-title">
@@ -243,6 +259,16 @@ export default function Home() {
         <div className="erp-pattern" />
         <div className="erp-copy"><span className="section-kicker">ERPNext · BUILT AROUND YOU</span><h2>Your business,<br /><i>in sync.</i></h2><p>Make operations clearer, faster and ready for what’s next with ERPNext implementation tailored to the way your team actually works.</p><button className="button button-light" onClick={() => scrollToId("contact")}>Explore ERPNext <ArrowUpRight size={18} /></button></div>
         <div className="erp-card"><div className="erp-card-head"><span>UXD / ERPNext</span><span>LIVE SYSTEM</span></div><div className="erp-bars"><div><span>Revenue operations</span><b style={{ width: "86%" }} /></div><div><span>Inventory visibility</span><b style={{ width: "72%" }} /></div><div><span>Team efficiency</span><b style={{ width: "94%" }} /></div></div><div className="erp-card-foot"><span>ONE SOURCE OF TRUTH</span><strong>↗</strong></div></div>
+      </section>
+
+      <section className="systems-section section-pad" id="systems">
+        <div className="section-heading"><span className="section-kicker">CONNECTED SYSTEMS</span><h2>Connect, integrate and manage <i>the way forward.</i></h2><p>We bring the platforms, data and experiences around your business into one clearer operating picture.</p></div>
+        <div className="systems-grid">{systems.map((system) => <article className="sys-card" key={system.name}><h3>{system.name}</h3><img className="sys-art" src={system.image} alt="" style={{ backgroundColor: system.tint }} /><p className="sys-name">{system.role}</p><p className="sys-desc">{system.body}</p><a className="sys-link" href="#contact">Explore system <span>→</span></a></article>)}</div>
+      </section>
+
+      <section className="enterprise-section section-pad" id="enterprise">
+        <div className="ent-head-row"><div className="section-heading"><span className="section-kicker">ENTERPRISE TECHNOLOGY</span><h2>Solutions designed for <span>business growth.</span></h2><p>From a focused workflow to a whole operating ecosystem, we design the right level of technology for what comes next.</p></div><a className="ent-view-all" href="#contact">Talk to our team <ArrowUpRight size={16} /></a></div>
+        <div className="ent-grid">{enterpriseSolutions.map((solution, index) => <article className={`ent-card ${solution.wide ? "wide" : ""}`} key={solution.name}><div className="ent-media-wrap"><span className="ent-num">0{index + 1}</span><img className="ent-media" src={solution.image} alt="" /></div><div className="ent-body"><h3>{solution.name}</h3><p>{solution.body}</p></div></article>)}</div>
       </section>
 
       <section className="studio-beliefs section-pad"><div className="belief-copy"><span className="section-kicker">WHY UXD STUDIO</span><h2>Built for useful<br /><span>transformation.</span></h2><p>We bridge technology and user experience to help startups and enterprises improve efficiency, customer engagement and sustainable growth.</p></div><div className="belief-grid"><article><span>01 / MISSION</span><h3>Make complex digital change feel clear, human and ready to scale.</h3></article><article><span>02 / VISION</span><h3>Lead with digital transformation, emerging technology and design innovation.</h3></article><article className="industry-card"><span>03 / INDUSTRIES WE SUPPORT</span><p>Manufacturing · Retail · Education · Healthcare · Distribution · Agriculture · Hospitality · Non-profits · E-commerce</p></article></div></section>
