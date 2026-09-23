@@ -137,7 +137,10 @@ const clientMarks = [
   ["La Orchid", "https://uxdstudio.com/files/laOrchid.png"], ["Chennai Properties", "https://uxdstudio.com/files/chennaiProperties.png"], ["Elekta", "https://uxdstudio.com/files/elekta.png"],
   ["Pando", "https://uxdstudio.com/files/pando.png"], ["MocDoc", "https://uxdstudio.com/files/client-mocdoc-logo-new.png"], ["SPS", "https://uxdstudio.com/files/sps.png"],
   ["Emerald", "https://uxdstudio.com/files/emerald.png"], ["Welbeck", "https://uxdstudio.com/files/welbeck.jpg"], ["Connector", "https://uxdstudio.com/files/client-connector-logo-new.png"],
-  ["Sterling", "https://uxdstudio.com/files/client-sterling.png"], ["VFF", "https://uxdstudio.com/files/vff.png"], ["Belle Fashion", "https://uxdstudio.com/files/client-logo-bellefashion.jpg"]
+  ["Sterling", "https://uxdstudio.com/files/client-sterling.png"], ["VFF", "https://uxdstudio.com/files/vff.png"], ["Belle Fashion", "https://uxdstudio.com/files/client-logo-bellefashion.jpg"],
+  ["Tanvi", "https://uxdstudio.com/files/tanvi.png"], ["UtilityX", "https://uxdstudio.com/files/utiltyx.png"], ["Ocean Spice", "https://uxdstudio.com/files/oceanSpice.png"],
+  ["Docs Valley", "https://uxdstudio.com/files/docsValley.png"], ["YUG", "https://uxdstudio.com/files/yug.png"], ["Excel", "https://uxdstudio.com/files/excel-logo-png-test.png"],
+  ["Invention Steel", "https://uxdstudio.com/files/client-invention-steel.png"], ["Marutham Organic Farms", "https://uxdstudio.com/files/Marutham%20Organic%20Farms.png"]
 ];
 
 function scrollToId(id: string) {
@@ -206,10 +209,8 @@ export default function Home() {
           <a href="#work" onClick={() => setMenuOpen(false)}>Work</a>
           <div className={`nav-item ${activeNav === "technologies" ? "open" : ""}`}><button className="nav-trigger" onClick={() => setActiveNav(activeNav === "technologies" ? null : "technologies")}>Technologies <ChevronDown size={14} /></button>{activeNav === "technologies" && <div className="mega-menu"><div className="mega-sidebar"><span className="mega-label">PLATFORMS</span>{["Odoo", "Shopify", "AI", "CRM", "Commerce"].map((item) => <a href="#systems" key={item} onClick={() => { setActiveNav(null); setMenuOpen(false); }}><span className="mega-glyph">✦</span>{item}</a>)}</div><div className="mega-links"><span className="mega-label">CONNECTED SYSTEMS</span><div className="mega-links-grid"><a href="#systems">ERP & business systems</a><a href="#systems">AI + automation</a><a href="#systems">Commerce ecosystems</a><a href="#enterprise">Enterprise technology</a><a href="#enterprise">Integrations & APIs</a></div><a className="mega-explore" href="#systems">See our stack <ArrowUpRight size={15} /></a></div><div className="mega-panel mega-panel-dark"><span>READY FOR WHAT’S NEXT</span><strong>Modern systems that work the way your business works.</strong><a href="#contact">Explore the stack →</a></div></div>}</div>
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-          <a href="#leadership" onClick={() => setMenuOpen(false)}>Leadership</a>
           <Link href="/case-studies" onClick={() => setMenuOpen(false)}>Case Studies</Link>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
-          <Link className="nav-cta" href="/start-a-project">Start a project <ArrowUpRight size={16} /></Link>
         </nav>
         <button className="menu-toggle" onClick={() => { setMenuOpen(!menuOpen); setActiveNav(null); }} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
       </header>
