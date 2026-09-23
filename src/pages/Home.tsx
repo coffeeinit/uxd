@@ -217,25 +217,17 @@ export default function Home() {
         <button className="menu-toggle" onClick={() => { setMenuOpen(!menuOpen); setActiveNav(null); }} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
       </header>
 
-      <section className="hero" id="top" aria-labelledby="hero-title">
-        <div className="hero-copy hero-copy-centered">
-          <p className="eyebrow"><span className="eyebrow-dot" /> DIGITAL TRANSFORMATION PARTNER</p>
-          <h1 id="hero-title">Build what’s <em>next.</em></h1>
-          <p className="hero-intro">We design and develop future-ready digital products, intelligent business systems and experiences that make complex things feel simple.</p>
-          <div className="hero-actions">
-            <button className="button button-dark" onClick={() => scrollToId("contact")}>Let’s talk <MoveRight size={18} /></button>
-            <button className="text-button" onClick={() => scrollToId("work")}><span className="play-icon"><Play size={12} fill="currentColor" /></span> See our work</button>
-          </div>
+      <section className="hero hero-v2" id="top" aria-labelledby="hero-title">
+        <div className="hero-float hero-float-odoo">
+          <div className="hero-chip"><span className="hero-chip-dot" style={{ background: "#7b3ff2" }} /> Odoo</div>
+          <div className="hero-popover"><div className="hero-popover-head"><div><span className="hero-popover-eyebrow">UXD STUDIO · ODOO SILVER PARTNER</span><strong className="hero-popover-title">Top Odoo solutions</strong></div><span className="hero-popover-close">×</span></div><div className="hero-popover-row"><Layers3 size={16} /><span>Odoo Shopify Connector</span><small>real-time</small></div><div className="hero-popover-row"><Globe2 size={16} /><span>Odoo Multivendor Marketplace</span><small>B2B</small></div><div className="hero-popover-row"><Layers3 size={16} /><span>Odoo ERP Implementation</span><small>end-to-end</small></div><div className="hero-popover-foot"><span className="hero-popover-flag" />Among the largest Odoo app catalogs</div></div>
         </div>
-        <div className="hero-art hero-art-centered" aria-label="Abstract UXD Studio infinity mark">
-          <div className="hero-grid" />
-          <div className="orb orb-one" /><div className="orb orb-two" />
-          <div className="infinity-mark"><span /><span /></div>
-          <div className="art-label label-top">IDEA → IMPACT</div>
-          <div className="art-label label-bottom">UXD / 2026</div>
-          <div className="hero-sticker">THINK<br />DIFFERENT<span>↗</span></div>
-        </div>
-        <div className="hero-chip hero-chip-left"><span className="hero-chip-dot" /> Odoo / ERPNext</div><div className="hero-chip hero-chip-right"><span className="hero-chip-dot hero-chip-dot-lime" /> AI + automation</div><div className="hero-foot"><span>SCROLL TO EXPLORE</span><ChevronDown size={18} /><span>01 / 06</span></div>
+        <div className="hero-float hero-float-shopify"><div className="hero-chip"><span className="hero-chip-dot" style={{ background: "#95bf47" }} /> Shopify</div></div>
+        <div className="hero-float hero-float-claude"><div className="hero-chip"><span className="hero-chip-dot" style={{ background: "var(--red)" }} /> Claude</div></div>
+        <div className="hero-float hero-float-gemini"><div className="hero-chip"><span className="hero-chip-dot" style={{ background: "#4285f4" }} /> Gemini</div></div>
+        <div className="hero-center hero-copy-centered"><h1 id="hero-title">Commerce, ERP &amp; AI<br />that work <em>as one.</em></h1><p className="hero-intro">We design, build, and transform enterprise-grade Commerce, ERP, and AI solutions that connect complex operations, unlock intelligence, and create exceptional digital experiences at scale.</p><div className="hero-actions"><button className="button button-dark" onClick={() => scrollToId("contact")}>Talk to sales <MoveRight size={16} /></button><button className="button button-light" onClick={() => scrollToId("services")}>Explore our services <MoveRight size={16} /></button></div></div>
+        <div className="hero-stats"><div className="hero-stat"><b>150K+</b><span>CUSTOMERS WORLDWIDE</span></div><div className="hero-stat"><b>155+</b><span>COUNTRIES</span></div><div className="hero-stat"><b>16 yrs</b><span>BUILDING COMMERCE</span></div></div>
+        <button className="hero-chat-btn" onClick={() => scrollToId("contact")} aria-label="Chat"><span>⌁</span></button>
       </section>
 
       <section className="proof-bar" id="about" aria-labelledby="about-title">
