@@ -115,6 +115,7 @@ h1 em, h2 i { font-family: Georgia, serif; font-weight: 400; letter-spacing: -.0
 .intake-hero h1 { font-size: clamp(70px, 10vw, 150px); line-height: .8; margin: 28px 0; }
 .intake-hero p { max-width: 520px; font-size: 18px; line-height: 1.5; color: #ffe7db; }
 .intake-form { max-width: 1180px; margin: 0 auto; padding: 100px 8vw; }
+.intake-page > .intake-form { padding-top: 72px; }
 .form-section { display: grid; grid-template-columns: 70px 1fr; gap: 28px; padding: 45px 0; border-bottom: 2px solid var(--ink); }
 .form-number { font-size: 13px; font-weight: 900; color: var(--red); }
 .form-section h2 { font-size: clamp(30px, 4vw, 54px); letter-spacing: -.07em; line-height: .95; }

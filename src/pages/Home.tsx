@@ -211,6 +211,7 @@ export default function Home() {
           <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
           <Link href="/case-studies" onClick={() => setMenuOpen(false)}>Case Studies</Link>
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <Link className="nav-cta" href="/start-a-project">Start a project <ArrowUpRight size={16} /></Link>
         </nav>
         <button className="menu-toggle" onClick={() => { setMenuOpen(!menuOpen); setActiveNav(null); }} aria-label="Toggle menu">{menuOpen ? <X /> : <Menu />}</button>
       </header>
